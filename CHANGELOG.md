@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/wesh-s/JE-Morphe-Patches/compare/v1.0.0...v1.1.0) (2026-11-14)
+
+### ✨ New Features
+
+* Rename Feat:release.yml to release.yml ([1b67a3b](https://github.com/wesh-s/JE-Morphe-Patches/commit/1b67a3b9081ea2f420fa6c22947ea8f159f77992))
+
 ## 1.0.0 (2026-11-14)
 
 ### ⚠ BREAKING CHANGES
