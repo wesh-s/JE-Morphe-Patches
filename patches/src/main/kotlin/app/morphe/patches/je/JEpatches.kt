@@ -7,6 +7,7 @@ import org.w3c.dom.Element
 val allowBackupPatch = resourcePatch(
     name = "Allow Backup",
     description = "Enables android:allowBackup in AndroidManifest.xml for any app.",
+    default = false,
 ) {
     execute {
         document("AndroidManifest.xml").use { document ->
