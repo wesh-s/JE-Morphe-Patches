@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/wesh-s/JE-Morphe-Patches/compare/v1.1.0...v1.2.0) (2026-11-14)
+
+### ✨ New Features
+
+* add allow backup universal patch ([347957d](https://github.com/wesh-s/JE-Morphe-Patches/commit/347957dd531b82d29f2f177b5f44a9611964e8db))
+
 ## [1.1.0](https://github.com/wesh-s/JE-Morphe-Patches/compare/v1.0.0...v1.1.0) (2026-11-14)
 
 ### ✨ New Features

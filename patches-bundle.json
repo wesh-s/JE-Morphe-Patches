@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-11-14T13:32:36",
-  "description": "## [1.1.0](https://github.com/wesh-s/JE-Morphe-Patches/compare/v1.0.0...v1.1.0) (2026-11-14)\n\n### ✨ New Features\n\n* Rename Feat:release.yml to release.yml ([1b67a3b](https://github.com/wesh-s/JE-Morphe-Patches/commit/1b67a3b9081ea2f420fa6c22947ea8f159f77992))",
-  "download_url": "https://github.com/wesh-s/JE-Morphe-Patches/releases/download/v1.1.0/patches-1.1.0.mpp",
+  "created_at": "2026-11-14T13:36:20",
+  "description": "## [1.2.0](https://github.com/wesh-s/JE-Morphe-Patches/compare/v1.1.0...v1.2.0) (2026-11-14)\n\n### ✨ New Features\n\n* add allow backup universal patch ([347957d](https://github.com/wesh-s/JE-Morphe-Patches/commit/347957dd531b82d29f2f177b5f44a9611964e8db))",
+  "download_url": "https://github.com/wesh-s/JE-Morphe-Patches/releases/download/v1.2.0/patches-1.2.0.mpp",
   "signature_download_url": "",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "public_key": "g8Ys9leTu2yeixojeR35HrNkK6eOSLpA6nNIizRutqI="
 }
