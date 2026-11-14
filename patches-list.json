@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "2.2.0",
+  "version": "1.0.0",
   "patches": [
     {
       "name": "AI channel filter",
@@ -158,6 +158,14 @@
           ]
         }
       ],
+      "options": []
+    },
+    {
+      "name": "Allow Backup",
+      "description": "Enables android:allowBackup in AndroidManifest.xml for any app.",
+      "default": false,
+      "category": null,
+      "compatiblePackages": null,
       "options": []
     },
     {
