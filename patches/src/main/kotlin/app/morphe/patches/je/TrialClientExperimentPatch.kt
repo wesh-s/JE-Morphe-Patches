@@ -28,14 +28,14 @@ internal object StopTrialFingerprint : Fingerprint(
 @Suppress("unused")
 val trialClientExperimentPatch = patch(
     name = "TrialClient Experiment",
-    description = "Experimental patch that hooks TrialClient.checkTrialStatus and stopTrial.",
+    description = "Returns NOT_UNDER_TRIAL (2) for TrialClient.checkTrialStatus and disables stopTrial.",
     default = false,
 ) {
     execute {
         CheckTrialStatusFingerprint.method.addInstructionsWithLabels(
             0,
             """
-                const/4 v0, 0x0
+                const/4 v0, 0x2
                 return v0
             """.trimIndent(),
         )
@@ -48,3 +48,4 @@ val trialClientExperimentPatch = patch(
         )
     }
 }
+
