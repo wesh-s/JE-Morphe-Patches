@@ -5,26 +5,33 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLa
 import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.patch
 
-internal object ActivityOnCreateFingerprint : Fingerprint(
-    returnType = "V",
-    parameters = listOf("Landroid/os/Bundle;"),
+// 1. Fingerprint: tells Morphe HOW to find your target method in the APK
+internal object MyTargetFingerprint : Fingerprint(
+    returnType = "V", // Replace with the method's return type (V, Z, I, etc.)
+    parameters = listOf(
+        // Replace with the exact Smali parameter types inside ( ... )
+        "Landroid/os/Bundle;",
+    ),
     filters = listOf(
-        methodCall(smali = "Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V"),
+        // Copy a unique invoke-* line from inside the Smali method body
+        methodCall(smali = "Lcom/example/app/SomeClass;->someHelper()V"),
     ),
 )
 
+// 2. Patch definition: tells Morphe WHAT to change once the method is found
 @Suppress("unused")
-val bytecodeLabPatch = patch(
-    name = "Bytecode Lab (No-Op Hook)",
-    description = "Educational bytecode patch that locates Activity.onCreate via Fingerprint and injects a safe nop instruction.",
+val myCustomExperimentPatch = patch(
+    name = "My Custom Experiment",
+    description = "Describe clearly what this patch changes.",
     default = false,
 ) {
     execute {
-        ActivityOnCreateFingerprint.method.addInstructionsWithLabels(
+        MyTargetFingerprint.method.addInstructionsWithLabels(
             0,
             """
-                nop
-            """,
+                return-void
+            """.trimIndent(),
         )
     }
 }
+
