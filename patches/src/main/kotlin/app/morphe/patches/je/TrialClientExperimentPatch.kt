@@ -25,10 +25,20 @@ internal object StopTrialFingerprint : Fingerprint(
     ),
 )
 
+internal object LicenseCheckLambdaFingerprint : Fingerprint(
+    returnType = "V",
+    parameters = listOf("Lcom/pairip/licensecheck/LicenseClient;"),
+    filters = listOf(
+        methodCall(
+            smali = "Lcom/pairip/licensecheck/LicenseClient;->lambda\$initializeLicenseCheck\$0()V",
+        ),
+    ),
+)
+
 @Suppress("unused")
 val trialClientExperimentPatch = patch(
     name = "TrialClient Experiment",
-    description = "Returns NOT_UNDER_TRIAL (2) for TrialClient.checkTrialStatus and disables stopTrial.",
+    description = "Returns NOT_UNDER_TRIAL (2), disables stopTrial, and skips license check lambda.",
     default = false,
 ) {
     execute {
@@ -41,6 +51,13 @@ val trialClientExperimentPatch = patch(
         )
 
         StopTrialFingerprint.method.addInstructionsWithLabels(
+            0,
+            """
+                return-void
+            """.trimIndent(),
+        )
+
+        LicenseCheckLambdaFingerprint.method.addInstructionsWithLabels(
             0,
             """
                 return-void
